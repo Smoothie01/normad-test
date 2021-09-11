@@ -1,0 +1,23 @@
+@import "../variabless";
+
+.header{
+  &__item{
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    justify-content: space-between;
+  }
+}
+.location{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 8px;
+  transition: all .2s linear;
+  font-weight: 600;
+  &:hover{
+    background-color:$lightGray;
+    border-radius: .8rem;
+  }
+}

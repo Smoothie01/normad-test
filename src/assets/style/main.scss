@@ -1,0 +1,201 @@
+@import "variabless";
+@import "reset";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+body{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+section{
+  padding: 20px 0;
+}
+hr{
+  background-color: $gray;
+  border:none;
+  height: 1px;
+}
+.wrapper{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.container{
+  max-width: $desktop;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.filter{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 15px;
+}
+.group{
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+.search{
+  display: flex;
+  position: relative;
+  width: 460px;
+  height: 40px;
+  input[type='text']{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    font-family: inherit;
+    padding: 0 20px;
+    background-color: $lightGray;
+    font-size: .9rem;
+    border:none;
+    border-radius: 4px;
+    height: 100%;
+    top: 0;
+  }
+  button{
+    position: absolute;
+    top: 0;
+    font-family: inherit;
+    right: 0;
+    z-index: 10;
+    padding: 0 19px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    height: 100%;
+  }
+}
+.btn{
+  padding: 10px 42px;
+  border:none;
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  gap: 5px;
+  transition: all .2s linear;
+  cursor: pointer;
+  border-radius: .2rem;
+  &--yellow{
+    background-color: $yellow;
+    &:hover{
+      background-color: $darkYellow;
+    }
+  }
+  &--rose{
+    background-color: $rose;
+    color:$white
+  }
+  &--dark{
+    background-color: $black;
+    color:$white
+  }
+  &--primary{
+    background-color: $blue;
+    &:hover{
+      background-color: $darkBlue;
+    }
+  }
+  &-group{
+    display: flex;
+    gap: 18px;
+  }
+}
+.cart--link{
+  padding: 10px;
+  background-color: $rose;
+  border-radius: 50%;
+}
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 50px;
+  row-gap: 35px;
+  flex-wrap: wrap;
+}
+.title{
+  text-align: center;
+  font-size: 36px;
+  font-weight: 500;
+  margin: 55px 0;
+}
+
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: $white;
+  background-color: $darkGray;
+  background-image: none;
+  cursor: pointer;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  border-radius: .25em;
+  overflow: hidden;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color: $darkGray;
+  transition: .25s all ease;
+  pointer-events: none;
+}
+/* Transition */
+.select:hover::after {
+  color: $yellow;
+}
+
+
+.card {
+  transition: all 0.5s;
+}
+.card-enter, .card-leave-to
+  /* .card-leave-active for <2.1.8 */ {
+  opacity: 0;
+  transform: scale(0);
+}
+.card-enter-to {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card-leave-active {
+  /*position: absolute;*/
+}
+
+.card-move {
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-active {
+  padding-left: 10px;
+  opacity: 0;
+}
+

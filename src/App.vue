@@ -1,28 +1,32 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div class="wrapper">
+        <Header/>
+        <transition name="slide-fade">
+            <router-view></router-view>
+        </transition>
+        <Footer/>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "@/components/Header";
+import {mapMutations} from "vuex";
+import Footer from "@/components/Footer";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: 'App',
+    components: {Footer, Header},
+    methods:{
+        ...mapMutations(['setToCard'])
+    },
+    mounted() {
+        if (localStorage.getItem('carts')){
+            this.setToCard(JSON.parse(localStorage.getItem('carts')))
+        }
+    }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "assets/style/main";
 </style>
